@@ -3,11 +3,10 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-	const priceElements = document.querySelectorAll(".prices");
+	const priceElements = document.querySelectorAll(".price");
   let total = 0;
 
   priceElements.forEach(el => {
-    // Trim text and convert to number
     total += Number(el.textContent.trim());
   });
 
@@ -22,9 +21,9 @@ const getSum = () => {
 
   // Create a new row and cell
   const totalRow = document.createElement("tr");
-  totalRow.id = "totalRow"; 
+  totalRow.id = "totalRow";
   const totalCell = document.createElement("td");
-  totalCell.colSpan = 2; 
+  totalCell.colSpan = 2;
   totalCell.textContent = "Total Price: " + total;
 
   totalRow.appendChild(totalCell);
