@@ -3,7 +3,8 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-	const priceElements = document.querySelectorAll(".prices");
+  // Select all elements with class "prices"
+  const priceElements = document.querySelectorAll(".price");
   let total = 0;
 
   priceElements.forEach(el => {
@@ -27,9 +28,6 @@ const getSum = () => {
 
   totalRow.appendChild(totalCell);
   table.appendChild(totalRow);
-//Add your code here
-  
 };
 
 getSumBtn.addEventListener("click", getSum);
-
