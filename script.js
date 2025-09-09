@@ -7,13 +7,14 @@ const getSum = () => {
   let total = 0;
 
   priceElements.forEach(el => {
-    total += Number(el.textContent);
+    // Trim text and convert to number
+    total += Number(el.textContent.trim());
   });
 
   // Get table
   const table = document.querySelector("table");
 
-  // If total row already exists, remove it (to avoid duplicates)
+  // If total row already exists, remove it
   const existingRow = document.getElementById("totalRow");
   if (existingRow) {
     existingRow.remove();
@@ -21,9 +22,9 @@ const getSum = () => {
 
   // Create a new row and cell
   const totalRow = document.createElement("tr");
-  totalRow.id = "totalRow"; // unique id to identify later
+  totalRow.id = "totalRow"; 
   const totalCell = document.createElement("td");
-  totalCell.colSpan = 2; // span across both columns
+  totalCell.colSpan = 2; 
   totalCell.textContent = "Total Price: " + total;
 
   totalRow.appendChild(totalCell);
